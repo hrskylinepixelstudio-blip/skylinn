@@ -6,7 +6,13 @@ export async function onRequestPost(context) {
     const email = String(data.email || "").trim();
     const phone = String(data.phone || "").trim();
     const service = String(data.service || "").trim();
-    const message = String(data.message || "").trim();
+    const message = String(
+  data.message ||
+  data.project ||
+  data.projectDetails ||
+  data.details ||
+  ""
+).trim();
 
     if (!name || !email || !message) {
       return new Response(
