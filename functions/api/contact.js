@@ -84,13 +84,14 @@ export async function onRequestPost(context) {
     const result = await resendResponse.json();
 
     if (!resendResponse.ok) {
-      console.error("Resend error:", result);
+  console.error("Resend error:", result);
 
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Unable to send enquiry."
-        }),
+  return new Response(
+    JSON.stringify({
+      success: false,
+      message: result?.message || "Resend rejected the email request.",
+      error: result
+    }),
         {
           status: 500,
           headers: { "Content-Type": "application/json" }
