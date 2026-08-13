@@ -245,6 +245,161 @@
   .faq-a{ max-height:0; overflow:hidden; transition:max-height .35s ease;}
   .faq-a p{ padding-top:14px; color:var(--fg-dim); font-size:14.5px; max-width:640px;}
 
+  /* ---------- PAYMENT ---------- */
+
+.payment-card{
+  padding:32px;
+  border-radius:24px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.payment-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+@media (max-width:850px){
+  .payment-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.payment-info h3{
+  font-size:32px;
+  margin:14px 0 14px;
+}
+
+.payment-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 14px;
+  border-radius:100px;
+  background:rgba(16,217,196,0.10);
+  border:1px solid rgba(16,217,196,0.25);
+  color:var(--teal);
+  font-family:'Roboto Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.payment-description{
+  color:var(--fg-dim);
+  font-size:15px;
+  max-width:520px;
+  margin-bottom:28px;
+}
+
+.payment-detail{
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.payment-detail span{
+  font-size:11px;
+  color:var(--fg-dim);
+  font-family:'Roboto Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.payment-detail strong{
+  font-family:'Outfit',sans-serif;
+  font-size:15px;
+  color:var(--fg);
+}
+
+.upi-text{
+  word-break:break-all;
+}
+
+.payment-btn{
+  margin-top:26px;
+}
+
+.payment-note{
+  margin-top:14px;
+  color:var(--fg-dim);
+  font-size:12.5px;
+}
+
+.payment-qr{
+  text-align:center;
+}
+
+.qr-frame{
+  width:min(100%,430px);
+  margin:0 auto;
+  padding:18px;
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.qr-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:10px;
+}
+
+.qr-caption{
+  margin:16px 0 14px;
+  color:var(--fg-dim);
+  font-size:13px;
+}
+
+.upi-copy-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.upi-copy-row code{
+  padding:11px 14px;
+  border-radius:10px;
+  background:var(--surface-strong);
+  border:1px solid var(--line);
+  font-family:'Roboto Mono',monospace;
+  font-size:12px;
+  color:var(--fg);
+  word-break:break-all;
+}
+
+.copy-upi{
+  padding:11px 16px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--surface-strong);
+  color:var(--fg);
+  font-family:'Outfit',sans-serif;
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.copy-upi:hover{
+  border-color:var(--teal);
+  color:var(--teal);
+}
+
+.copy-msg{
+  display:none;
+  margin-top:10px;
+  font-size:12px;
+  color:var(--teal);
+}
+
   /* ---------- CONTACT ---------- */
   .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px;}
   @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
@@ -303,7 +458,8 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+<a href="#payment">Payment</a>
+<a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
@@ -565,6 +721,87 @@
 </section>
 
 <!-- ================= CONTACT ================= -->
+
+<!-- ================= PAYMENT ================= -->
+<section id="payment" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Payment</div>
+      <h2>Make a secure payment</h2>
+      <p>
+        Pay SKYLINN VOXEL STUDIO PRIVATE LIMITED securely using UPI.
+        Scan the official Indian Bank QR code or use the UPI payment button.
+      </p>
+    </div>
+
+    <div class="payment-card reveal">
+      <div class="payment-grid">
+
+        <div class="payment-info">
+          <span class="payment-badge">Indian Bank · UPI</span>
+
+          <h3>Scan &amp; Pay</h3>
+
+          <p class="payment-description">
+            Use any supported UPI application such as Google Pay, PhonePe,
+            Paytm, BHIM or your bank's UPI app.
+          </p>
+
+          <div class="payment-detail">
+            <span>Beneficiary</span>
+            <strong>SKYLINN VOXEL STUDIO PRIVATE LIMITED</strong>
+          </div>
+
+          <div class="payment-detail">
+            <span>UPI ID</span>
+            <strong class="upi-text">skylinnstudioack@indianbk</strong>
+          </div>
+
+          <div class="payment-detail">
+            <span>Bank</span>
+            <strong>Indian Bank</strong>
+          </div>
+
+          <a
+            class="btn btn-primary payment-btn"
+            href="upi://pay?pa=skylinnstudioack@indianbk&amp;pn=SKYLINN%20VOXEL%20STUDIO%20PRIVATE%20LIMITED&amp;cu=INR">
+            Pay via UPI App
+          </a>
+
+          <p class="payment-note">
+            Please verify the beneficiary name before completing the payment.
+          </p>
+        </div>
+
+        <div class="payment-qr">
+          <div class="qr-frame">
+            <img
+              src="indian-bank-upi-qr.jpg"
+              alt="Official Indian Bank UPI QR code for SKYLINN VOXEL STUDIO PRIVATE LIMITED">
+          </div>
+
+          <p class="qr-caption">Scan this official Indian Bank QR code</p>
+
+          <div class="upi-copy-row">
+            <code id="upiId">skylinnstudioack@indianbk</code>
+            <button
+              type="button"
+              class="copy-upi"
+              onclick="copyUPI()">
+              Copy UPI ID
+            </button>
+          </div>
+
+          <div id="upiCopyMsg" class="copy-msg">
+            UPI ID copied successfully.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+  
 <section id="contact" style="background:var(--bg-2);">
   <div class="wrap contact-grid">
     <div class="reveal">
@@ -826,6 +1063,23 @@ function draw(now){
 window.addEventListener('resize', resize);
 resize();
 requestAnimationFrame(draw);
+
+/* ---------- UPI copy ---------- */
+function copyUPI(){
+  const upi = document.getElementById('upiId').textContent.trim();
+  const msg = document.getElementById('upiCopyMsg');
+
+  navigator.clipboard.writeText(upi).then(()=>{
+    msg.style.display = 'block';
+
+    setTimeout(()=>{
+      msg.style.display = 'none';
+    }, 2200);
+  }).catch(()=>{
+    alert('UPI ID: ' + upi);
+  });
+}
+  
 </script>
 </body>
 </html>
