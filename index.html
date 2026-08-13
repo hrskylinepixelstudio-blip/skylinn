@@ -816,22 +816,66 @@
     </div>
     <div class="reveal">
       <form class="contact-form" id="contactForm">
-        <div class="field"><label>Full name</label><input type="text" required placeholder="Your name"></div>
-        <div class="field"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
-        <div class="field"><label>Phone</label><input type="tel" placeholder="+91"></div>
-        <div class="field"><label>What do you need?</label>
-          <select>
-            <option>Business website</option>
-            <option>Web application</option>
-            <option>Digital marketing</option>
-            <option>Branding & design</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label>Project details</label><textarea rows="4" placeholder="Tell us a bit about your business and goals"></textarea></div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-msg" id="formMsg">Thanks — we've received your message and will be in touch shortly.</p>
-      </form>
+
+  <div class="field">
+    <label>Full name</label>
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Your name"
+    >
+  </div>
+
+  <div class="field">
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@company.com"
+    >
+  </div>
+
+  <div class="field">
+    <label>Phone</label>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="+91"
+    >
+  </div>
+
+  <div class="field">
+    <label>What do you need?</label>
+    <select name="service">
+      <option value="Business website">Business website</option>
+      <option value="Web application">Web application</option>
+      <option value="Digital marketing">Digital marketing</option>
+      <option value="Branding & design">Branding & design</option>
+      <option value="Something else">Something else</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Project details</label>
+    <textarea
+      name="message"
+      rows="4"
+      placeholder="Tell us a bit about your business and goals"
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    Send Message
+  </button>
+
+  <p class="form-msg" id="formMsg">
+    Thanks — we've received your message and will be in touch shortly.
+  </p>
+
+</form>
     </div>
   </div>
 </section>
