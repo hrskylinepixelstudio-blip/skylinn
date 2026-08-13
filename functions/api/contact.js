@@ -43,7 +43,7 @@ export async function onRequestPost(context) {
     }
 
     const emailBody = `
-      <h2>New Enquiry - Skyline Pixel Studio</h2>
+      <h2>New Enquiry - Skylinn Voxel Studio</h2>
 
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
