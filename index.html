@@ -999,12 +999,71 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 
-/* ---------- Contact form (no backend — demo confirmation) ---------- */
-document.getElementById('contactForm').addEventListener('submit', (e)=>{
-  e.preventDefault();
-  document.getElementById('formMsg').style.display = 'block';
-  e.target.reset();
-});
+/* ---------- Contact form ---------- */
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formMsg = document.getElementById('formMsg');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    const originalText = submitButton ? submitButton.textContent : 'Send Message';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    const formData = new FormData(contactForm);
+
+    const data = {
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      phone: formData.get('phone') || '',
+      service: formData.get('service') || '',
+      message: formData.get('message') || ''
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formMsg.textContent =
+          'Thank you! Your enquiry has been sent successfully.';
+        formMsg.style.display = 'block';
+
+        contactForm.reset();
+      } else {
+        formMsg.textContent =
+          result.message || 'Unable to send your enquiry. Please try again.';
+        formMsg.style.display = 'block';
+      }
+
+    } catch (error) {
+      console.error('Contact form error:', error);
+
+      formMsg.textContent =
+        'Unable to send your enquiry right now. Please try again later.';
+      formMsg.style.display = 'block';
+
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
+  });
+}
 
 /* ---------- Footer year ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
