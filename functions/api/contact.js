@@ -72,7 +72,7 @@ export async function onRequestPost(context) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          from: "Skyline Website <onboarding@resend.dev>",
+         from: "Skyline Website <website@skylinn.in>",
           to: ["skylinnvoxel@gmail.com"],
           reply_to: email,
           subject: `New Website Enquiry - ${name}`,
