@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trade Hunter | Business Lead Discovery & Prospecting Platform</title>
+
+  <meta
+    name="description"
+    content="Trade Hunter is a business lead discovery and prospecting platform developed by Skyline Pixel Studio to help businesses discover, organise and manage potential customer leads."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --navy: #111936;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --light-blue: #eff6ff;
+      --text: #273044;
+      --muted: #667085;
+      --light: #f7f9fc;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --green: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Header */
+
+    .header {
+      background:
+        linear-gradient(135deg, #111936 0%, #172554 55%, #1d4ed8 100%);
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #bfdbfe;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .tagline {
+      margin: 25px auto 0;
+      max-width: 750px;
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.4;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .description {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      background: white;
+      color: var(--blue-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cta:hover {
+      background: #eff6ff;
+      text-decoration: none;
+    }
+
+    /* Main */
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 40px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .section h3 {
+      color: var(--navy);
+      margin-top: 28px;
+    }
+
+    .section p {
+      margin: 10px 0 16px;
+    }
+
+    /* Feature cards */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+      background: #ffffff;
+    }
+
+    .feature-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      background: var(--light-blue);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Information box */
+
+    .highlight {
+      margin-top: 25px;
+      background: var(--light-blue);
+      border-left: 4px solid var(--blue);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Developer */
+
+    .developer {
+      background: var(--navy);
+      color: white;
+    }
+
+    .developer h2 {
+      color: white;
+    }
+
+    .developer p {
+      color: #cbd5e1;
+    }
+
+    .developer strong {
+      color: white;
+    }
+
+    /* Links */
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .legal-link {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      font-weight: 600;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #0b1025;
+      color: #94a3b8;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #93c5fd;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .header {
+        padding: 60px 20px;
+      }
+
+      .section {
+        padding: 28px 22px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-links {
+        flex-direction: column;
+      }
+
+      .legal-link {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="header">
+
+    <div class="header-inner">
+
+      <div class="brand">
+        Skyline Pixel Studio
+      </div>
+
+      <h1>Trade Hunter</h1>
+
+      <div class="tagline">
+        Business Lead Discovery &amp; Prospecting Platform
+      </div>
+
+      <p class="description">
+        Discover potential customers, explore business opportunities,
+        organise prospects and support your business development
+        workflow with Trade Hunter.
+      </p>
+
+      <a class="cta" href="#about">
+        Learn About Trade Hunter
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+
+      <h2>About Trade Hunter</h2>
+
+      <p>
+        <strong>Trade Hunter</strong> is a business lead discovery
+        and prospecting platform developed to help business owners,
+        entrepreneurs, sales professionals and organisations discover
+        and organise potential business leads.
+      </p>
+
+      <p>
+        The platform provides digital tools that can help users
+        identify potential businesses, customers and business
+        opportunities relevant to their target market.
+      </p>
+
+      <p>
+        Trade Hunter is designed to support the process of finding,
+        organising and researching potential prospects before
+        initiating business communication or customer outreach.
+      </p>
+
+      <div class="highlight">
+
+        <strong>Purpose of Trade Hunter</strong>
+
+        <p>
+          Trade Hunter helps businesses discover potential leads and
+          organise prospect information so that users can conduct
+          their own business research and customer-development
+          activities more efficiently.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
+      <h2>What Trade Hunter Provides</h2>
+
+      <div class="features">
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            🔎
+          </div>
+
+          <h3>Lead Discovery</h3>
+
+          <p>
+            Discover potential businesses, customers and prospects
+            relevant to your target market.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            📊
+          </div>
+
+          <h3>Business Research</h3>
+
+          <p>
+            Explore available business information to support your
+            prospecting and business-development activities.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            📋
+          </div>
+
+          <h3>Lead Organisation</h3>
+
+          <p>
+            Organise potential leads and prospect information to
+            support structured follow-up activities.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+              🚀
+          </div>
+
+          <h3>Business Development</h3>
+
+          <p>
+            Use discovered information as part of your own sales,
+            marketing and customer-development workflow.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+
+      <h2>How Trade Hunter Works</h2>
+
+      <p>
+        Trade Hunter is designed around a simple business prospecting
+        workflow:
+      </p>
+
+      <ol>
+
+        <li>
+          <strong>Define your target market</strong> —
+          identify the type of businesses, customers or prospects
+          you are looking for.
+        </li>
+
+        <li>
+          <strong>Discover potential leads</strong> —
+          use the available search and discovery functionality
+          to identify relevant prospects.
+        </li>
+
+        <li>
+          <strong>Review information</strong> —
+          evaluate the information available about potential leads.
+        </li>
+
+        <li>
+          <strong>Organise prospects</strong> —
+          maintain relevant prospect information for your own
+          business-development workflow.
+        </li>
+
+        <li>
+          <strong>Conduct your own outreach</strong> —
+          decide independently how and when to contact potential
+          customers in accordance with applicable laws and
+          communication requirements.
+        </li>
+
+      </ol>
+
+    </section>
+
+
+    <!-- RESPONSIBLE USE -->
+
+    <section class="section">
+
+      <h2>Responsible Use</h2>
+
+      <p>
+        Trade Hunter is a business research and lead discovery tool.
+        Users are responsible for how they use information obtained
+        through the platform.
+      </p>
+
+      <p>
+        Users must comply with applicable privacy, data-protection,
+        marketing, advertising, anti-spam, consumer-protection and
+        other laws when contacting or communicating with potential
+        customers.
+      </p>
+
+      <p>
+        Trade Hunter should not be used to conduct unlawful,
+        deceptive, fraudulent, abusive or unsolicited activities.
+      </p>
+
+    </section>
+
+
+    <!-- INFORMATION ACCURACY -->
+
+    <section class="section">
+
+      <h2>Information and Data Accuracy</h2>
+
+      <p>
+        Business information available through Trade Hunter may come
+        from public sources, third-party services, user-provided
+        information or other data sources, depending on the
+        functionality of the application.
+      </p>
+
+      <p>
+        Information may change over time and may not always be
+        complete, current or accurate.
+      </p>
+
+      <p>
+        Users should independently verify important information
+        before making business decisions or contacting a prospect.
+      </p>
+
+    </section>
+
+
+    <!-- AI / AUTOMATION -->
+
+    <section class="section">
+
+      <h2>Automated and AI-Assisted Features</h2>
+
+      <p>
+        Certain versions or features of Trade Hunter may use
+        automation or artificial intelligence to assist with search,
+        classification, organisation, summarisation or analysis of
+        information.
+      </p>
+
+      <p>
+        Automated or AI-assisted results may contain errors or
+        omissions. Users should review important information and
+        exercise their own judgement before relying on any result.
+      </p>
+
+    </section>
+
+
+    <!-- PRIVACY -->
+
+    <section class="section">
+
+      <h2>Privacy</h2>
+
+      <p>
+        Information collected through Trade Hunter is handled in
+        accordance with the
+        <a href="https://skylinn.in/privacy.html">
+          Skyline Pixel Studio Privacy Policy
+        </a>.
+      </p>
+
+      <p>
+        Please review the Privacy Policy to understand how personal
+        information may be collected, used, stored and protected.
+      </p>
+
+    </section>
+
+
+    <!-- TERMS -->
+
+    <section class="section">
+
+      <h2>Terms of Service</h2>
+
+      <p>
+        Use of Trade Hunter is subject to the
+        <a href="https://skylinn.in/terms.html">
+          Skyline Pixel Studio Terms of Service
+        </a>.
+      </p>
+
+      <div class="legal-links">
+
+        <a
+          class="legal-link"
+          href="https://skylinn.in/terms.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Terms of Service
+        </a>
+
+        <a
+          class="legal-link"
+          href="https://skylinn.in/privacy.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEVELOPER -->
+
+    <section class="section developer">
+
+      <h2>About the Developer</h2>
+
+      <p>
+        <strong>Trade Hunter</strong> is developed and operated by:
+      </p>
+
+      <p>
+
+        <strong>
+          Skylinn Voxel Studio Private Limited
+        </strong>
+
+        <br>
+
+        Trading as
+        <strong>Skyline Pixel Studio</strong>
+
+      </p>
+
+      <p>
+
+        No. 05, Ellai Amman Koil Street,<br>
+        Perumberkandigai Village &amp; Post,<br>
+        Madhurantagam Taluk,<br>
+        Chengalpattu District,<br>
+        Tamil Nadu, India
+
+      </p>
+
+      <p>
+
+        Website:
+        <a
+          href="https://skylinn.in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://skylinn.in
+        </a>
+
+        <br>
+
+        Email:
+        <a href="mailto:info@skylinn.in">
+          info@skylinn.in
+        </a>
+
+        <br>
+
+        Phone:
+        <a href="tel:+919790818436">
+          +91 97908 18436
+        </a>
+
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section">
+
+      <h2>Contact Trade Hunter</h2>
+
+      <p>
+        For questions regarding Trade Hunter, its services,
+        privacy or terms of use, please contact:
+      </p>
+
+      <p>
+
+        <strong>
+          <a href="mailto:info@skylinn.in">
+            info@skylinn.in
+          </a>
+        </strong>
+
+        <br>
+
+        <a href="tel:+919790818436">
+          +91 97908 18436
+        </a>
+
+      </p>
+
+      <p>
+
+        <a href="https://skylinn.in">
+          Visit Skyline Pixel Studio
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      <strong>Trade Hunter</strong>
+      &nbsp;|&nbsp;
+      Business Lead Discovery &amp; Prospecting Platform
+    </p>
+
+    <p>
+      Developed by
+      <a href="https://skylinn.in">
+        Skyline Pixel Studio
+      </a>
+    </p>
+
+    <p>
+
+      <a href="https://skylinn.in/privacy.html">
+        Privacy Policy
+      </a>
+
+      &nbsp; | &nbsp;
+
+      <a href="https://skylinn.in/terms.html">
+        Terms of Service
+      </a>
+
+    </p>
+
+    <p>
+      © 2026 Skylinn Voxel Studio Private Limited.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
